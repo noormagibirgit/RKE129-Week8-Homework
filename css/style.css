@@ -1,0 +1,107 @@
+:root{
+    --my-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    color:rgb(10, 7, 3);
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr 0.7fr;
+    grid-template-areas: 
+    "header menu menu menu"
+    "hero hero hero hero"
+    "main main main image"
+    "main main main extra"
+    "banner banner banner banner"
+    
+    ;
+
+
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+header{
+    background-color: rgb(145, 158, 231);
+    padding: var(--my-padding);
+    grid-area: header;
+
+
+}
+
+.menu{
+    background-color: blueviolet;
+    padding: var(--my-padding);
+    grid-area: menu;
+}
+
+hero{
+    background-color: rgb(217, 185, 226);
+    padding: var(--my-padding);
+    grid-area: hero;
+}
+
+main{
+    background-color:rgb(231, 128, 235);
+    padding: var(--my-padding);
+    grid-area: main;
+}
+
+.image{
+    background-color: rgb(192, 17, 177);
+    padding: var(--my-padding);
+    grid-area: image;
+}
+
+.extra{
+    background-color: rgb(71, 71, 196);
+    padding: var(--my-padding);
+    grid-area: extra;
+}
+
+banner{
+    background-color: rgb(126, 58, 133);
+    padding: var(--my-padding);
+    grid-area: banner;
+}
+
+@media (max-width: 1024px) {
+    .container{
+        gap: 0;
+        grid-template-columns: 0.5fr 1fr 0.6fr;
+        grid-template-rows: 0.5fr 1.5fr 1fr 0.7fr 0.5fr;
+        grid-template-areas: 
+        "header header header"
+        "hero hero hero"
+        "menu main main"
+        "menu banner banner"
+        "menu extra image"
+        ;
+    }
+}
+
+@media (max-width: 480px) {
+    .container{
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr 1.5fr 1.8fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image"
+        ;
+    }
+}
